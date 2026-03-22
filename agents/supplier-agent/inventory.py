@@ -113,8 +113,14 @@ def find_supplier(embedding_vector: list[float]) -> tuple | None:
         # ORDER BY <=> finds the nearest match (lowest distance).
         # The ScaNN index automatically accelerates this query.
 
-        sql = "SELECT part_name, supplier_name FROM inventory LIMIT 1;"
-        cursor.execute(sql)
+        sql = """
+        SELECT part_name, supplier_name,
+            part_embedding <=> %s::vector as distance
+        FROM inventory
+        ORDER BY part_embedding <=> %s::vector
+        LIMIT 1;
+        """
+        cursor.execute(sql, (embedding_str, embedding_str))
         return cursor.fetchone()
     except Exception as e:
         logger.error(f"Database query failed: {e}")
