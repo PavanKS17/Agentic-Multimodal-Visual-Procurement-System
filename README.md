@@ -3,14 +3,20 @@
 An enterprise-grade, agentic supply chain control tower that bridges the gap between physical inventory and digital procurement. 
 
 Powered by **Gemini 3 Flash** and **Google Cloud AlloyDB**, this system demonstrates a complete autonomous loop: interpreting visual real-world data, writing and executing code to verify it, retrieving high-dimensional supplier vectors, and executing orders via an Agent-to-Agent (A2A) protocol.
+<img width="1600" height="774" alt="image" src="https://github.com/user-attachments/assets/7a2a698b-23bd-4e12-98c4-90892316eec2" />
 
 ##  The Agentic Workflow
 
 This system abandons static scripts in favor of a dynamic, reasoning-based AI architecture:
 
-1. ** Perception (Visual Reasoning):** The agent ingests warehouse imagery. Instead of relying on standard OCR, it leverages Gemini 3 Flash to generate and execute **Python OpenCV** scripts on the fly to accurately detect and count physical inventory.
-2. ** Memory (Vector Search):** Visual data is transformed into embeddings and queried against a massive supplier database. Using **AlloyDB AI** and **ScaNN** (Scalable Nearest Neighbors), the system performs sub-millisecond similarity matching.
-3. ** Action (A2A Protocol):** Once a high-confidence supplier match is found, the system autonomously negotiates and places the order using the **Agent-to-Agent (A2A) Protocol**, requiring zero human intervention.
+1. ** Perception (Visual Reasoning):** The agent ingests warehouse imagery. Instead of relying on standard OCR, it leverages Gemini 3 Flash to generate and execute **Python OpenCV** scripts on the fly to accurately detect and count physical inventory. <img width="1600" height="774" alt="image" src="https://github.com/user-attachments/assets/5e86ccbe-c2a7-45e4-a541-efb1463492e3" />
+<img width="1600" height="773" alt="image" src="https://github.com/user-attachments/assets/8dc4ed78-a142-44f1-87c5-d249a0ef1452" />
+
+2. ** Memory (Vector Search):** Visual data is transformed into embeddings and queried against a massive supplier database. Using **AlloyDB AI** and **ScaNN** (Scalable Nearest Neighbors), the system performs sub-millisecond similarity matching. <img width="1600" height="735" alt="image" src="https://github.com/user-attachments/assets/a52bbf3d-ac64-4b16-bce4-1f6bb11fd541" />
+
+3. ** Action (A2A Protocol):** Once a high-confidence supplier match is found, the system autonomously negotiates and places the order using the **Agent-to-Agent (A2A) Protocol**, requiring zero human intervention.<img width="1600" height="774" alt="image" src="https://github.com/user-attachments/assets/2adf2773-64bf-4158-a89c-c129f31e9abf" />
+ <img width="1600" height="743" alt="image" src="https://github.com/user-attachments/assets/d566ebe5-e95c-44d6-be29-25351d81149a" />
+
 
 ## 📊 System Architecture
 
